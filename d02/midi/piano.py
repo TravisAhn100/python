@@ -12,7 +12,7 @@ def play_notes(notes_list):
                         time.sleep(0.5)
                 else:
                         t = mp.Process(target = p.play_note,\
-                                        args = (note, 1.5))
+                                         args = (note, 1.5))
                         t.start()
                         processes_list += [t]
         for process in processes_list:
