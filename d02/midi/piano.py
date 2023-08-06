@@ -11,6 +11,8 @@ def play_notes(notes_list):
                 if note == '_':
                         time.sleep(0.5)
                 else:
+                        if note.islower():
+                                note += "5"
                         t = mp.Process(target = p.play_note,\
                                          args = (note, 1.5))
                         t.start()
@@ -21,7 +23,5 @@ def play_notes(notes_list):
 if __name__ == "__main__":
         while True:
                 chords_strs  = input("> ").split()
-                chords_chars = [list(s) for s in chords_strs]
-
-                for chord in chords_chars:
+                for chord in chords_strs:
                         play_notes(chord)
