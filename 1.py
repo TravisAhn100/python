@@ -13,7 +13,7 @@ for i in range(giri):
     ascii_num_of_c = ord(c)              ## 'b' -> 98
     n_th_alphabet  = ascii_num_of_c - 97 ##     ->  1    
     target_char    = keyset[n_th_alphabet]   ## b에 바꿀 것이 1번째 칸에 있음
-
     input_to_change[i] = target_char
+
 
 print(input_to_change)
