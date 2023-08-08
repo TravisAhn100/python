@@ -133,3 +133,51 @@ for i in range(giri):
 
 print(input_to_change)
 ```
+
+###### Explanation
+![caesarian cypher](caesar.jpg)
+
+예를 들어, `input`을 바꿀 때 첫 글자 `"b"`의 경우, 무슨 글자로 바꿔야 하는지
+`keyset`에서 찾는다. 이때, `keyset`은 알파벳 순으로 나열돼 있으므로,
+알파벳 순서에 해당하는 위치에서 바로 값을 찾는 것이 가능하다.
+예를 들어, `a`는 0번째, `b`는 1번째인 식이다.
+
+##### ASCII Code
+American Standard Code for Information Interchange의 약자로, 각종 글자를
+컴퓨터 상에서 어떻게 표현할 것인지 정한 것이다.
+한 글자당 1바이트(=8비트)를 사용하여 표현하며, 이는 0번째 글짜부터 (2<sup>8</sup> - 1)
+번 글짜까지 총 256가지의 글자를 나타낼 수 있다는 뜻이다.
+![ascii](https://i.namu.wiki/i/IeNzsQnOQp2uF7emIWo7Q8RmdGwwRd6AF4t77vuEnb2FDzEzlCeJFodi1z9ARpPchxQSZTEk876Kj6yfKSXiXM-gpueaYi8C_V4OpDJFHTw2jZ0vU8gUkKl_Y6ECaSaEsV98u0uoaFqRzfmNvhzcqA.gif)
+
+###### Application
+ASCII 0번대부터 31번대까지는 시스템 특수신호 문자로, Esc키, Backspace키 등을 포함하며,
+대부분의 경우 코드 상에서 사용할 일이 없다.[^tab]
+
+ASCII 코드는 알파벳/숫자 순으로 부여돼있으므로, 위 예시처럼 `'a'가 0이라고 할 때
+알파벳이 몇 번째에 해당하는지 알파벳 ⇔ 숫자 변환 용으로 요긴하게 사용할 수 있다.
+* **알파벳 → 숫자:**
+   * ```ord(alphabet) - ord('a')``` (소문자 전용)
+   * ```ord(alphabet.lower()) - ord('a')``` (대,소문자 겸용)
+
+* **숫자 → 알파벳:**
+  * ```chr(num + ord('a'))``` (소문자)
+  * ```chr(num + ord('A'))``` (대문자)
+
+
+##### Today's Assignment: Jukebox
+[`musicalbeeps`](https://github.com/MaelDrapier/musicalbeeps/tree/master) 모듈을
+사용하여 간단한 음악재생기를 만들어보자.
+
+```python
+import musicalbeeps as MB
+
+player = MB.Player(volume = 0.5)
+
+player.play_note("A", 0.5) # 0.5초 동안 A4를 연주
+```
+* `Player.play_note()`로 노트 하나를 개별적으로 연주할 수 있다.
+* "CDEFGAB"와 같이 문자열로 여러 노트를 받았을 때, 반복문을 사용하여 이를 순차적으로
+   연주하는 프로그램을 짜보자.
+
+[^tab]: Tab키의 경우 텍스트 정렬용으로 가끔 사용되며, `'\t'`라고 쓴다. 줄바꿈 문자 (`'\n'`)
+도 자주 사용된다.
