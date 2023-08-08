@@ -16,11 +16,11 @@ while True:
                x=t
     if c=='-':
                x=t
-                
+
     if c=='x':
             if x== a*b:
                 x=t
-                
+
     if c=='/':
             if x== a//b:
                 x=t
@@ -30,4 +30,4 @@ while True:
     y=time()
     print("{:.0f}".format(y-l),'sec')
 
-    
+
