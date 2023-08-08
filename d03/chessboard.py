@@ -4,10 +4,10 @@ BLACK_BG = "\033[40;97m"
 WHITE_BG = "\033[107;30m"
 RESET    = "\033[m"
 
-def draw_board(board): 
+def draw_board(board):
     line = " "
     for x in range(8):
-        line += ' ' + chr(ord('A') + x) 
+        line += ' ' + chr(ord('A') + x)
     print(line)
 
     for (y, row) in enumerate(board):
@@ -29,7 +29,7 @@ board= [['.' for i in range(8)]for j in range(8)]
 
 knight='♘'
 
-board[0][ 1]=knight 
+board[0][ 1]=knight
 board[0][-2]=knight
 
 draw_board(board)
@@ -57,4 +57,3 @@ if board[rank][row]=='♘':
     board[rank2][row2]='♘'
     for line in board:
         print(line)
-    
