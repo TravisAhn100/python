@@ -15,6 +15,19 @@ def knight_movement(board, y, x, y2, x2):
         if [y2,x2] == c:
             return True
     return False
+
+"""""
+purpose: validates the movement for the knight
+input  : from & to coordinates
+returns: whether the move is legal for the rook
+"""""
+def rook_movement(board, y, x, y2, x2):
+    seung_movement=[]
+    for c in seung_movement:
+        if [y2,x2] == c:
+            return True
+    return False
+
 """
 purpose: selects an (y,x) coord from user input.
          if couldn't, repeats until it can
