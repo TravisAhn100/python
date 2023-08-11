@@ -2,7 +2,10 @@ from random import random
 
 BLACK_BG = "\033[40;97m"
 WHITE_BG = "\033[107;30m"
+BRED_BG  = "\033[101m"
 RESET    = "\033[m"
+
+selected = [-1, -1] ## None
 
 """
 purpose: validates the movement for the knight
@@ -44,6 +47,8 @@ def select_coord(board):
             continue
         else:
             break
+    global selected
+    selected = [y, x]
     return [y, x]
 
 """
@@ -76,16 +81,19 @@ def draw_board(board):
                     line += BLACK_BG
                 if x%2==1:
                     line += WHITE_BG
-                if x==7:
-                    ' '+ line+ WHITE_BG
             if y%2==0:
                 if x%2==0:
                     line += WHITE_BG
                 if x%2==1:
                     line += BLACK_BG
-                if x==7:
-                    '  '+line + BLACK_BG
+            if selected == [y, x]:
+                line += BRED_BG
+ 
             line += cell
+            
+            if x == 7:
+                line += ' '
+            
         line += RESET
         print(line)
 
@@ -108,6 +116,7 @@ draw_board(board)
 while True:
     [y, x] = select_coord(board)
 
+    draw_board(board)
     coord_message(x,y,board[y][x])
 
     if board[y][x]=='.':
