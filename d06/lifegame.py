@@ -59,7 +59,7 @@ def lifegame_step(board_prev):
         for (x_num,x_row) in enumerate(y_list):
             # print(end='')
             if x_row == 1:
-                x_surrounding_coord(board,y_num,x_num)
+                [y,x] = x_surrounding_coord(board,y_num,x_num)
                 count_coord(board,y_num,x_num)
                 
 def count_coord(board,y,x): 
