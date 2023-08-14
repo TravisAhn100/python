@@ -3,7 +3,7 @@ def str_reverse(w):
     for i in range(len(w)-1,-1,-1):
         v+=[w[i]]
 
-print(v)
+global v
 
 def str_reverse_inplace(w):
     rev = ""
