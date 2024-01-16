@@ -50,5 +50,9 @@
 #print(f'Is the item for sale? : {for_sale}')
 #print(f'Game running: {running}')
 
-from random import random
-print(random())
+''''
+length = float(input("Enter the length of a reptangle: "))
+width = float(input("Enter the width of a reptangle: "))
+area = length * width
+print(f"The area is : {area}cm^2")
+'''''
