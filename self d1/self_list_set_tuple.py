@@ -1,0 +1,2 @@
+x= 'I miss the old Kanye, straight from the Go KanyeChop up the soul Kanye, set on his goals KanyeI hate the new Kanye, the bad mood KanyeThe always rude Kanye, spaz in the news KanyeI miss the sweet Kanye, chop up the beats Kanye'
+x = x.replace("Kanye","Commit")
